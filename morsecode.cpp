@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "morsecode.h"
 
 string morseencode(string text){                                       
 	string ans = "";										
@@ -40,16 +40,4 @@ string morsedecode(string text){
     }
 
     return outputString;
-}
-
-void morsecode(string file_name, int swich){
-    string text = fileread(file_name);
-    string ans = "";
-    
-    if (swich == 1){
-        ans = morsedecode(text);
-    } else {
-        ans = morseencode(text);
-    }
-    filewrite(ans, file_name);
 }

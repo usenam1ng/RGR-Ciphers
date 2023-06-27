@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "viginere.h"
 
 const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()-=+_><{}[] ,.?";
 
@@ -44,18 +44,4 @@ string decrypt(string text, string key){
         code += alphabet[(keycode(text[i]) - keycode(key[i % key.length()]) + alphabet.length()) % alphabet.length()];
     }
     return code;
-}
-
-void vigenere(string file_name, int swich) {
-    string key = getkey();
-    string text = fileread(file_name);
-    string ans = "";
-    
-    if (swich == 1){
-        ans = decrypt(text, key);
-    } else {
-        ans = encrypt(text, key);
-    }
-    
-    filewrite(ans, file_name);
 }
