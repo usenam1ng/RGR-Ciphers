@@ -31,3 +31,5 @@ void vigenere(string, int);
 void morsecode(string, int);
 
 void atbash(string, int);
+
+void skital(string, int);

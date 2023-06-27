@@ -1,1 +1,1 @@
-Hello, world! But 13 is a good number? Yes, it is good.
+Hello, world!

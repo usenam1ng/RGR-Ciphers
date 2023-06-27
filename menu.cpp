@@ -118,6 +118,7 @@ int typeOfClipher(){
         cout << "Введите 1, если хотите использовать шифр Вижинера" << endl;
         cout << "Введите 2, если хотите использовать шифр Атбаш " << endl;
         cout << "Введите 3, если хотите использовать азбука Морзе" << endl;
+        cout << "Введите 4, eсли хотите использовать шифр скитала" << endl;
         getline(cin, n);
         try{
             if (n == "") {
@@ -133,17 +134,10 @@ int typeOfClipher(){
         }
     } while (good == false);
 
-    if (n == "1"){
-        system("clear");
-        return 1;
-    } else if (n == "2") {
-        system("clear");
-        return 2;
-    } else if (n == "3") {
-        system("clear");
-        return 3;
-    }
-}
+    int res = stoi(n);
+    
+    return res;
+} 
 
 void cryption(string filename, int clipher, int typeWork){
     if (clipher == 1){
@@ -154,6 +148,9 @@ void cryption(string filename, int clipher, int typeWork){
         ifprintfile(filename);
     } else if (clipher == 3){
         morsecode(filename, typeWork);
+        ifprintfile(filename);
+    } else if (clipher == 4) {
+        skital(filename, typeWork);
         ifprintfile(filename);
     }
 }

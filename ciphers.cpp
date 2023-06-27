@@ -1,6 +1,7 @@
 #include "atbash.h"
 #include "viginere.h"
 #include "morsecode.h"
+#include "skital.h"
 #include "menu.h"
 
 
@@ -39,6 +40,21 @@ void atbash(string file_name, int swich){
         ans = atbash_encrypt(text);
     } else {
         ans = atbash_encrypt(text);
+    }
+    
+    filewrite(ans, file_name);
+}
+
+void skital(string file_name, int swich){
+    string text = fileread(file_name);
+    string ans = "";
+
+    int key = skitalgetkey();
+    
+    if (swich == 1){
+        ans = skitalencode(text, key);
+    } else {
+        ans = skitaldecode(text, key);
     }
     
     filewrite(ans, file_name);
