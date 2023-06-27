@@ -6,6 +6,8 @@ string menu(){
 
     bool good = false;
 	do{
+        cout << "ПРОГРАММА РАБОТАЕТ ТОЛЬКО ДЛЯ ЛАТИНСКИХ БУКВ (АНГЛИЙСКОГО ЯЗЫКА)!" << endl;
+        cout << " " << endl;
         cout << "Вы хотите создать новый файл или использовать готовый?" << endl;
         cout << "------------------------------------------------------" << endl;
         cout << "Введите 1, если хотите создать и использовать новый файл" << endl;
@@ -48,6 +50,8 @@ string menu(){
         cout << "Введите текст который хотите использовать: " << endl;
         getline(cin, text);
         filewrite(text, file_name);
+
+        ifprintfile(file_name);
     } else {
         cout << "Файл должен находиться в папке с программой" << endl;
         good = false;
@@ -65,8 +69,10 @@ string menu(){
                 cerr << error.what();
             }
         } while (good == false);
+
+        ifprintfile(file_name);
     }
-    system("clear");
+
     return file_name;
 }
 
@@ -108,13 +114,13 @@ int typeOfClipher(){
     do{
         cout << "Вы хотите использовать шифр Вижинера или шифр или шифр" << endl;
         cout << "Введите 1, если хотите использовать шифр Вижинера" << endl;
-        cout << "Введите 2, если хотите использовать шифр " << endl;
-        cout << "Введите 3, если хотите использовать шифр " << endl;
+        cout << "Введите 2, если хотите использовать шифр Атбаш " << endl;
+        cout << "Введите 3, если хотите использовать азбука Морзе" << endl;
         getline(cin, n);
         try{
             if (n == "") {
                 throw runtime_error("Введена пустая строка. Повторите попытку\n");
-            } else if (n != "1" && n != "2" && n != "3"){
+            } else if (n != "1" && n != "2" && n != "3" && n != "4"){
                 throw runtime_error("Вы ввели " + n + ", ожидалось 1, 2 или 3. Повторите попытку\n");
             }
             good = true;
@@ -124,8 +130,8 @@ int typeOfClipher(){
             cerr << error.what();
         }
     } while (good == false);
-    
-    if (n == "1") {
+
+    if (n == "1"){
         system("clear");
         return 1;
     } else if (n == "2") {
@@ -138,9 +144,14 @@ int typeOfClipher(){
 }
 
 void cryption(string filename, int clipher, int typeWork){
-    switch (clipher)
-	{
-	case 1:
+    if (clipher == 1){
         vigenere(filename, typeWork);
-	}
+        ifprintfile(filename);
+    } else if (clipher == 2){
+        atbash(filename, typeWork);
+        ifprintfile(filename);
+    } else if (clipher == 3){
+        morsecode(filename, typeWork);
+        ifprintfile(filename);
+    }
 }

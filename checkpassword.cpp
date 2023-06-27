@@ -21,5 +21,6 @@ bool checkpassword(){
 
 	system("clear");
     cout << "Вы успешно авторизовались" << endl;
+	cout << " " << endl;
     return true;
 }   

@@ -52,9 +52,9 @@ void vigenere(string file_name, int swich) {
     string ans = "";
     
     if (swich == 1){
-        ans = encrypt(text, key);
-    } else {
         ans = decrypt(text, key);
+    } else {
+        ans = encrypt(text, key);
     }
     
     filewrite(ans, file_name);
