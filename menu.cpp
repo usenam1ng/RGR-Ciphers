@@ -101,9 +101,11 @@ int typeOfWork(){
 
     if (n == "1") {
         system("clear");
+        checkpassword();
         return 1;
     } else if (n == "2") {
         system("clear");
+        checkpassword();
         return 2;
     }
 }

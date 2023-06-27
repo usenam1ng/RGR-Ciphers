@@ -2,6 +2,8 @@
 
 int main(){
 
+    system("clear");
+
     checkpassword();
 
     string filename = menu();
