@@ -5,7 +5,7 @@ int skitalgetkey(){
     bool good = false;
 	do{
 		try{
-			cout << "Количество строк барабана скитала: ";
+			cout << "Введите количество строк барабана скитала: ";
 			getline(cin, key);
 			if (key == "") {
 				throw runtime_error("Введена пустая строка. Попробуйте еще раз.\n");
