@@ -17,7 +17,7 @@ string morseencode(string text){
 }
 
 string morsedecode(string text){                                       
-	string outputString = "";										
+	string ans = "";										
 	map<string, char> dictionary = { {"._",'A'}, {"_...",'B'}, {"_._.",'C'}, {"_..",'D'}, {".",'E'}, {".._.",'F'}, {"__.",'G'}, {"....",'H'}, {"..",'I'}, {".___",'J'},{"_._",'K'}, {"._..",'L'}, {"__",'M'},
 										{"_.",'N'}, {"___",'O'}, {".__.",'P'}, {"__._",'Q'}, {"._.",'R'}, {"...",'S'}, {"_",'T'}, {".._",'U'}, {"..._",'V'}, {".__",'W'}, {"_.._",'X'}, {"_.__",'Y'}, {"__..",'Z'},
                                         {"._",'a'}, {"_...",'b'}, {"_._.",'c'}, {"_..",'d'}, {".", 'e'}, {".._.",'f'}, {"__.",'g'}, {"....",'h'}, {"..",'i'}, {".___",'j'},{"_._",'k'}, {"._..",'l'}, {"__",'m'},
@@ -32,8 +32,8 @@ string morsedecode(string text){
             i = j;
         }
         i++;
-        outputString += dictionary[buf];
+        ans += dictionary[buf];
     }
 
-    return outputString;
+    return ans;
 }

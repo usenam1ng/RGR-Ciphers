@@ -28,11 +28,11 @@ string skitalencode(string text, int m){
     int k = text.length();
     ciphertext = new char[k];
 
-    int n = ((k - 1) / m) + 1; // вычислили кол-во столбцов
+    int n = ((k - 1) / m) + 1;
     int ind;
 
     for (int i = 0; i < k; i++) {
-	    ind = m * (i % n) + (i / n);
+	    ind = n * (i % m) + (i / m);
 	    ciphertext[ind] = text[i];
     }
 
@@ -49,11 +49,11 @@ string skitaldecode(string text, int m){
     int k = text.length();
     ciphertext = new char[k];
 
-    int n = ((k - 1) / m) + 1; // вычислили кол-во столбцов
+    int n = ((k - 1) / m) + 1;
     int ind;
 
     for (int i = 0; i < k; i++) {
-	    ind = n * (i % m) + (i / m);
+	    ind = m * (i % n) + (i / n);
 	    ciphertext[ind] = text[i];
     }
 

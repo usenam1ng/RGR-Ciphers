@@ -140,17 +140,22 @@ int typeOfClipher(){
 } 
 
 void cryption(string filename, int clipher, int typeWork){
-    if (clipher == 1){
-        vigenere(filename, typeWork);
-        ifprintfile(filename);
-    } else if (clipher == 2){
-        atbash(filename, typeWork);
-        ifprintfile(filename);
-    } else if (clipher == 3){
-        morsecode(filename, typeWork);
-        ifprintfile(filename);
-    } else if (clipher == 4) {
-        skital(filename, typeWork);
-        ifprintfile(filename);
+    switch(clipher){
+        case 1: 
+            vigenere(filename, typeWork);
+            ifprintfile(filename);
+            break;
+        case 2: 
+            atbash(filename, typeWork);
+            ifprintfile(filename);
+            break;
+        case 3: 
+            morsecode(filename, typeWork);
+            ifprintfile(filename);
+            break;
+        case 4: 
+            skital(filename, typeWork);
+            ifprintfile(filename);
+            break;
     }
 }
